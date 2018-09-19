@@ -1,4 +1,4 @@
-image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.6.0
+image: registry.cn-hangzhou.aliyuncs.com/xforceplus/cifront:latest
 
 stages:
   - package
