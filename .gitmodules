@@ -10,3 +10,6 @@
 [submodule "choerodon-front-test-manager"]
 	path = choerodon-front-test-manager
 	url = ../../xforcecloud-xchoerodon/choerodon-front-test-manager.git
+[submodule "choerodon-front-agile"]
+	path = choerodon-front-agile
+	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
