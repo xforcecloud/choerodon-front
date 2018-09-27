@@ -35,7 +35,8 @@ docker-build:
   source .auto_devops.sh
 
   function node_module_ci() {
-    npm install -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
+    # npm install -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
+    npm install -registry http://172.18.10.176:4873
     mkdir -p /cache/$CI_PROJECT_NAME-$CI_PROJECT_ID-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA/
     mkdir -p ./tmp/
     cp -r ./node_modules/choerodon-front-boot/structure/configAuto.py ./tmp/
@@ -59,7 +60,8 @@ docker-build:
   function node_build() {
     chmod -R 777 node_modules
     modules=(choerodon-front-iam/iam choerodon-front-devops/devops choerodon-front-agile/agile choerodon-front-test-manager/testManager choerodon-front-wiki/wiki)
-    npm run ${1:-"build"} ${modules[@]} -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
+    # npm run ${1:-"build"} ${modules[@]} -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
+    npm run ${1:-"build"} ${modules[@]} -registry http://172.18.10.176:4873
     find dist -name '*.js' | xargs sed -i "s/localhost:version/$CI_COMMIT_TAG/g"
   }
 
