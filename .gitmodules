@@ -3,7 +3,7 @@
 	url = ../../xforcecloud-xchoerodon/choerodon-front-iam.git
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
-	url = http://gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-devops.git
+	url = http://gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-devops/tree/master
 [submodule "choerodon-front-wiki"]
 	path = choerodon-front-wiki
 	url = ../../xforcecloud-xchoerodon/choerodon-front-wiki.git
