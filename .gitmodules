@@ -1,15 +1,15 @@
 [submodule "choerodon-front-iam"]
 	path = choerodon-front-iam
-	url = ../../xforcecloud-xchoerodon/choerodon-front-iam.git
+	url = https://github.com/choerodon/choerodon-front-iam.git
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
-	url = ../../xforcecloud-xchoerodon/choerodon-front-devops.git
-[submodule "choerodon-front-wiki"]
-	path = choerodon-front-wiki
-	url = ../../xforcecloud-xchoerodon/choerodon-front-wiki.git
-[submodule "choerodon-front-test-manager"]
-	path = choerodon-front-test-manager
-	url = ../../xforcecloud-xchoerodon/choerodon-front-test-manager.git
+	url = https://github.com/choerodon/choerodon-front-devops.git
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
-	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
+	url = https://github.com/choerodon/choerodon-front-agile.git
+[submodule "choerodon-front-test-manager"]
+	path = choerodon-front-test-manager
+	url = https://github.com/choerodon/choerodon-front-test-manager.git
+[submodule "choerodon-front-wiki"]
+	path = choerodon-front-wiki
+	url = https://github.com/choerodon/choerodon-front-wiki.git
