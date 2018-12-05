@@ -1,4 +1,4 @@
-image: registry.cn-hangzhou.aliyuncs.com/xforceplus/cifront:latest
+image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cifront:0.7.0
 
 stages:
   - package
@@ -7,7 +7,7 @@ stages:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-node-dev-build:
+node-build:
   stage: package
   script:
     - node_module_ci
@@ -19,7 +19,7 @@ node-dev-build:
 
 docker-build:
   stage: build
-  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.6.0
+  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/cibase:0.7.0
   script:
     - docker_build
     - rm -rf /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
@@ -35,23 +35,21 @@ docker-build:
   source .auto_devops.sh
 
   function node_module_ci() {
-    # npm install -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
-    npm install -registry http://172.18.10.176:4873
+    npm i --registry https://nexus.choerodon.com.cn/repository/choerodon-npm/ --sass-binary-site=http://npm.taobao.org/mirrors/node-sass
     mkdir -p /cache/$CI_PROJECT_NAME-$CI_PROJECT_ID-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA/
     mkdir -p ./tmp/
-    cp -r ./node_modules/choerodon-front-boot/structure/configAuto.py ./tmp/
-    cp -r ./node_modules/choerodon-front-boot/structure/dashboard.py ./tmp/
+    cp -r ./node_modules/choerodon-front-boot/structure ./tmp/structure
     modules=(iam devops agile testManager wiki)
     folers=(choerodon-front-iam choerodon-front-devops choerodon-front-agile choerodon-front-test-manager choerodon-front-wiki)
-    for i in "${!modules[@]}"; 
-    do 
+    for i in "${!modules[@]}";
+    do
       mkdir -p ./tmp/${modules[$i]}/src/app/${modules[$i]}/
       cp -r ./${folers[$i]}/${modules[$i]}/src/app/${modules[$i]}/config ./tmp/${modules[$i]}/src/app/${modules[$i]}/
     done
     cd ./tmp
-    python ./configAuto.py ${modules[@]}
-    python ./dashboard.py  -o yml -m iam testManager agile
-    cp -r config.yml /cache/$CI_PROJECT_NAME-$CI_PROJECT_ID-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA/
+    python ./structure/menu/__init__.py -o yml -m ${modules[@]}
+    python ./structure/dashboard/__init__.py -o yml -m iam devops agile testManager wiki
+    cp -r menu.yml /cache/$CI_PROJECT_NAME-$CI_PROJECT_ID-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA/
     cp -r dashboard.yml /cache/$CI_PROJECT_NAME-$CI_PROJECT_ID-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA/
     rm -rf ./tmp
     cd ..
@@ -60,15 +58,14 @@ docker-build:
   function node_build() {
     chmod -R 777 node_modules
     modules=(choerodon-front-iam/iam choerodon-front-devops/devops choerodon-front-agile/agile choerodon-front-test-manager/testManager choerodon-front-wiki/wiki)
-    # npm run ${1:-"build"} ${modules[@]} -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
-    npm run ${1:-"build"} ${modules[@]} -registry http://172.18.10.176:4873
+    npm run ${1:-"build"} ${modules[@]} -registry https://nexus.choerodon.com.cn/repository/choerodon-npm/
     find dist -name '*.js' | xargs sed -i "s/localhost:version/$CI_COMMIT_TAG/g"
   }
 
   function docker_build(){
     cp -r /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/* ${1:-"."}
-    docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PWD}
     docker build --pull -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG} ${1:-"."}
+    docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PWD}
     docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${CI_COMMIT_TAG}
   }
 

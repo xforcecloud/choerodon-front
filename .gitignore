@@ -5,6 +5,7 @@
 .idea
 .project
 .vscode
+.iml
 
 # npm
 node_modules
@@ -25,3 +26,5 @@ sh.sh
 pythonsql.py
 
 /tmp
+
+package-lock.json

@@ -1,15 +1,20 @@
 [submodule "choerodon-front-iam"]
 	path = choerodon-front-iam
 	url = ../../xforcecloud-xchoerodon/choerodon-front-iam.git
+	branch = release-0.11.1
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
 	url = ../../xforcecloud-xchoerodon/choerodon-front-devops.git
-[submodule "choerodon-front-wiki"]
-	path = choerodon-front-wiki
-	url = ../../xforcecloud-xchoerodon/choerodon-front-wiki.git
-[submodule "choerodon-front-test-manager"]
-	path = choerodon-front-test-manager
-	url = ../../xforcecloud-xchoerodon/choerodon-front-test-manager.git
+	branch = release-0.11.3
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
 	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
+	branch = release-0.11.2
+[submodule "choerodon-front-test-manager"]
+	path = choerodon-front-test-manager
+	url = ../../xforcecloud-xchoerodon/choerodon-front-test-manager.git
+	branch = release-0.11.2
+[submodule "choerodon-front-wiki"]
+	path = choerodon-front-wiki
+	url = ../../xforcecloud-xchoerodon/choerodon-front-wiki.git
+	branch = release-0.11.0
