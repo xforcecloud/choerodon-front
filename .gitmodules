@@ -5,7 +5,7 @@
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
 	url = ../../xforcecloud-xchoerodon/choerodon-front-devops.git
-	branch = release-0.11.3
+	branch = feature-0.11.3-ghk
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
 	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
