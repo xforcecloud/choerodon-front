@@ -8,7 +8,7 @@
 	branch = x-master
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
-	url = https://github.com/choerodon/choerodon-front-agile.git
+	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
 	branch = x-master
 [submodule "choerodon-front-test-manager"]
 	path = choerodon-front-test-manager
