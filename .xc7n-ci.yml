@@ -11,7 +11,8 @@ node-build:
   stage: package
   script:
     - sed -i "s/http:\/\/gitlab.choerodon.xforceplus.com/..\/../g" .gitmodules
-    # - git submodule update --recursive --remote
+    - git submodule sync
+    - git submodule update --recursive --remote
     - node_module_ci
     - node_build build
     - cp -r dist /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}/dist
