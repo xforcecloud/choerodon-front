@@ -10,9 +10,9 @@ variables:
 node-build:
   stage: package
   script:
-    # - sed -i "s/http:\/\/gitlab.choerodon.xforceplus.com/..\/../g" .gitmodules
-    # - cat .gitmodules
-    # - git submodule sync
+    - sed -i "s/http:\/\/gitlab.choerodon.xforceplus.com/..\/../g" .gitmodules
+    - cat .gitmodules
+    - git submodule sync
     - git submodule update --recursive --remote
     - node_module_ci
     - node_build build
