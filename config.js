@@ -5,7 +5,7 @@ const config = {
   favicon: 'favicon.ico', //项目页面的icon图片名称
   fileServer: 'http://minio.choerodon.example.com',
   theme: {
-    'primary-color': '#00896C',
+    'primary-color': '#3f51b5',
   },
   cookieServer: '', //子域名token共享
   server: 'http://api.choerodon.example.com',
