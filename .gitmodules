@@ -1,20 +1,20 @@
 [submodule "choerodon-front-iam"]
 	path = choerodon-front-iam
-	url = ../../xforcecloud-xchoerodon/choerodon-front-iam.git
+	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-iam.git
 	branch = x-master
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
-	url = ../../xforcecloud-xchoerodon/choerodon-front-devops.git
-	branch = x-master
+	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-devops.git
+	branch = x-develop
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
-	url = ../../xforcecloud-xchoerodon/choerodon-front-agile.git
+	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-agile.git
 	branch = x-master
 [submodule "choerodon-front-test-manager"]
 	path = choerodon-front-test-manager
-	url = ../../xforcecloud-xchoerodon/choerodon-front-test-manager.git
+	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-test-manager.git
 	branch = x-master
 [submodule "choerodon-front-wiki"]
 	path = choerodon-front-wiki
-	url = ../../xforcecloud-xchoerodon/choerodon-front-wiki.git
+	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-wiki.git
 	branch = x-master
