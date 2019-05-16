@@ -12,6 +12,6 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "choerodon-front-boot": "6.0.54"
+    "choerodon-front-boot": "6.0.52"
   }
 }
