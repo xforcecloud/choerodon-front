@@ -5,7 +5,7 @@
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
 	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-devops.git
-	branch = x-master-0.12.1
+	branch = x-master
 [submodule "choerodon-front-agile"]
 	path = choerodon-front-agile
 	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-agile.git
