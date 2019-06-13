@@ -1,7 +1,7 @@
 [submodule "choerodon-front-iam"]
 	path = choerodon-front-iam
 	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-iam.git
-	branch = x-develop
+	branch = release-0.11.1
 [submodule "choerodon-front-devops"]
 	path = choerodon-front-devops
 	url = http://choerodon:password@gitlab.choerodon.xforceplus.com/xforcecloud-xchoerodon/choerodon-front-devops.git
