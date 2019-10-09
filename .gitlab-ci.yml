@@ -43,8 +43,8 @@ docker-build:
     cp -r ./node_modules/choerodon-front-boot/structure ./tmp/structure
     modules=(iam devops agile testManager wiki)
     folers=(choerodon-front-iam choerodon-front-devops choerodon-front-agile choerodon-front-test-manager choerodon-front-wiki)
-    for i in "${!modules[@]}"; 
-    do 
+    for i in "${!modules[@]}";
+    do
       mkdir -p ./tmp/${modules[$i]}/src/app/${modules[$i]}/
       cp -r ./${folers[$i]}/${modules[$i]}/src/app/${modules[$i]}/config ./tmp/${modules[$i]}/src/app/${modules[$i]}/
     done
